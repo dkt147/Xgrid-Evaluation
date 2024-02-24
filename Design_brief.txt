@@ -1,0 +1,56 @@
+Design Details of newsfeed system:
+
+There are some entities that are involved in this system which we need to identify before designing any system:
+
+1- Users.
+2- Followed Accounts.
+3- User Activity towards any trend.
+4- Groups, Pages, Posts followed by user.
+
+
+These are the key points which will help us generating more relevant feed for users. Let me explain in detail.
+
+Lets discuss the users and their friends which are also users(in our database) will have some following and followers. The users behaviour or intrest can be calculated based on accounts they follow or the account followed them.
+
+But, there is a high chance of users interest can change by time so to predict that intrest and keep user engage with the feed we need to filter te user acitivity like user is following which pages recently, liking which type of posts , commenting on which type of posts and videos, sharing which type of content to his feed.
+
+The pages they are following can also predict the current intrest of users.
+
+Based on all above points, I am sure that we can generate more relevant post to users feed.
+
+Functional Requirements:
+
+1- Newsfeed Generation: 
+
+As discussed above , the news feed can be generated based on the current intrest of users towards posts, pages, groups and followed accounts in recent times.
+
+2- News feed Content:
+
+Based on the type of post our algorithm is generating we can show user the relevant data like text, images , videos etc.
+
+3- Newsfeed Display:
+
+Based on the above criteria we can assign the content a priority likewise mentioned in requirements based on this priority order we can show the content to users in real time without performing any actitvity by appending it to the previous feed list.
+
+Non Function Requirements:
+
+1- Scalability:
+
+It depends on multiple factors such as language we are going to use for development, architecture of project, load balancing, database size and proper testing in multiple environments etc.
+
+By enhancing that above features we can make our system more scalable for future load.
+
+2- Fault tolerance:
+
+There should be a proper team to handle the test cased of the system based on different parameters. There should be proper load testing, stress testing, volume testing, monkey testing and other types of functional and non functional testing.
+
+3- Availability:
+
+We can use Distributes architecture in order to provide the high availability to users with the help of load balancing technique.
+
+4- Low latency:
+
+Server should have a minimum response time in order to entertain multiple users. There are many techniques of doing that like we can use redis for the caching technique or kafka or sockets for real time communication or a query language like graphql to reduce the number of queries to the server and cache the relative records which are searched more frequently.
+
+
+Based on the above structure I am attaching an sample database schema for better understanding.
